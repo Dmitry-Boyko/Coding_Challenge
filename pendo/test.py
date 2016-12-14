@@ -27,7 +27,6 @@ def driver():
 
 def main():
     d = driver()
-
     browse = BrowseAndBuy()
     browse.open_browser(d)
     browse.search_item(d)
@@ -44,15 +43,14 @@ class BrowseAndBuy():
         gp = GooglePage()
 
         selenium_driver.find_element(By.ID, gp.search()["search_fld"]).send_keys(gp.search()["h_sack"])
-        
         selenium_driver.find_element(By.ID, gp.search()["search_icon"]).send_keys(Keys.RETURN)
         #selenium_driver.find_element(By.ID, gp.search()["search_icon"]).click()
 
     def shopping_page(self, selenium_driver):
         gp = GooglePage()
         elements = selenium_driver.find_elements(By.CSS_SELECTOR, gp.search()["shopping"])
-        for element4th in elements:
-            if element4th.is_displayed():
+        for element in elements:
+            if element.is_displayed():
                 selenium_driver.find_element(By.CSS_SELECTOR, gp.search()["shopping"]).click()
 
     def save_to_shop_list(self, selenium_driver):
@@ -72,7 +70,6 @@ class BrowseAndBuy():
         except Exception, err:
             sys.stderr.write('ERROR: %sn' % str(err))
             return 1
-
 
 if __name__ == "__main__":
     main()
