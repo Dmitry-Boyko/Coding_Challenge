@@ -17,11 +17,10 @@ from selenium                           import webdriver
 from selenium.webdriver.common.by       import By
 from credentials                        import GooglePage
 from selenium.webdriver.common.keys     import Keys
-from selenium.webdriver.support.ui      import WebDriverWait
 
 def driver():
-    selenium_driver = webdriver.Chrome()
-    #selenium_driver = webdriver.Firefox()
+    selenium_driver = webdriver.Chrome()        # ChromeDriver should be in PATH
+    # selenium_driver = webdriver.Firefox()
     selenium_driver.set_page_load_timeout(30)
     selenium_driver.implicitly_wait(30)
     return selenium_driver
