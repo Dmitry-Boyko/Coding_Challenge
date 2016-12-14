@@ -17,6 +17,7 @@ from selenium                           import webdriver
 from selenium.webdriver.common.by       import By
 from credentials                        import GooglePage
 from selenium.webdriver.common.keys     import Keys
+from selenium.webdriver.support.ui      import WebDriverWait
 
 def driver():
     selenium_driver = webdriver.Chrome()
@@ -24,7 +25,6 @@ def driver():
     selenium_driver.set_page_load_timeout(30)
     selenium_driver.implicitly_wait(30)
     return selenium_driver
-
 
 def main():
     d = driver()
