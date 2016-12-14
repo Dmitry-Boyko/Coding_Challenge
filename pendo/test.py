@@ -36,7 +36,6 @@ def main():
     browse.save_to_shop_list(d)
     d.quit()
 
-
 class browse_and_buy():
 
     def open_browser(self, selenium_driver):
@@ -45,20 +44,14 @@ class browse_and_buy():
 
     def search_item(self, selenium_driver):
         gp = GooglePage()
-        try:
-            selenium_driver.find_element(By.ID, gp.search()["search_fld"]).send_keys(gp.search()["h_sack"])
-            selenium_driver.find_element(By.ID, gp.search()["search_icon"]).send_keys(Keys.RETURN)
-        except Exception, err:
-            sys.stderr.write('ERROR: %sn' % str(err))
-            return 1
+        
+        selenium_driver.find_element(By.ID, gp.search()["search_fld"]).send_keys(gp.search()["h_sack"])
+        selenium_driver.find_element(By.ID, gp.search()["search_icon"]).send_keys(Keys.RETURN)
 
     def shopping_page(self, selenium_driver):
         gp = GooglePage()
-        try:
-            selenium_driver.find_element(By.CSS_SELECTOR, gp.search()["shopping"]).click()
-        except Exception, err:
-            sys.stderr.write('ERROR: %sn' % str(err))
-            return 1
+        
+        selenium_driver.find_element(By.CSS_SELECTOR, gp.search()["shopping"]).click()
 
     def save_to_shop_list(self, selenium_driver):
         gp = GooglePage()
