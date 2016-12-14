@@ -25,7 +25,6 @@ def driver():
     selenium_driver.implicitly_wait(30)
     return selenium_driver
 
-
 def main():
     d = driver()
 
