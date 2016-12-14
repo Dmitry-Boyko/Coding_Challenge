@@ -35,7 +35,6 @@ def main():
     browse.save_to_shop_list(d)
     d.quit()
 
-
 class BrowseAndBuy():
     def open_browser(self, selenium_driver):
         gp = GooglePage()
