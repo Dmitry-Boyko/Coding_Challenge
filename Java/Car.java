@@ -1,3 +1,30 @@
+// --- Task ------------------------------------------------------------------------------------------------
+// Design a car class that describes properties of cars
+// code should compile and run
+
+// FIELDS
+// -> car type
+// -> color
+// -> doors
+// -> engine type (ex: "2.0L", "2.0L HO", "2.6L", "3.0L", "3.0L Turbo")
+// -> wheel diameter (ex: 15, 16, 17, 18)
+// -> tire size (ex: 185x50, 195x45, 205x40)
+//
+// REQUIREMENTS:
+// -> mandatory constructor arguments: 
+//    * car type (should be an Enum, options: Sport, Sedan, Hybrid, Luxury, Racing)
+//    * color    (should be an Enum, options: Red, Black, White, Gray)
+//    * doors    (should be an integer)
+//    * engine   (should be a string)
+//
+// -> all fields should be accessed via getters
+// -> provide setters for wheelDiameter and tireSize
+// -> wheel diameter should be an integer. do not allow wheel sizes less than 15 or greater than 19.
+// -> tire size should be a Dictionary, e.g. {"Width": 185, "Height": 50}
+
+// --- My Result -------------------------------------------------------------------------------------------
+
+
 import java.lang.*;
 import java.util.*;
 
