@@ -18,9 +18,10 @@ from selenium.webdriver.common.by       import By
 from credentials                        import GooglePage
 from selenium.webdriver.common.keys     import Keys
 
+
 def driver():
     selenium_driver = webdriver.Chrome()
-    # selenium_driver = webdriver.Firefox()
+    #selenium_driver = webdriver.Firefox()
     selenium_driver.set_page_load_timeout(30)
     selenium_driver.implicitly_wait(30)
     return selenium_driver
@@ -43,15 +44,11 @@ class BrowseAndBuy():
         gp = GooglePage()
 
         selenium_driver.find_element(By.ID, gp.search()["search_fld"]).send_keys(gp.search()["h_sack"])
-        selenium_driver.find_element(By.ID, gp.search()["search_icon"]).send_keys(Keys.RETURN)
-        #selenium_driver.find_element(By.ID, gp.search()["search_icon"]).click()
+        selenium_driver.find_element(By.ID, gp.search()["search_fld"]).send_keys(Keys.RETURN)
 
     def shopping_page(self, selenium_driver):
         gp = GooglePage()
-        elements = selenium_driver.find_elements(By.CSS_SELECTOR, gp.search()["shopping"])
-        for element in elements:
-            if element.is_displayed():
-                selenium_driver.find_element(By.CSS_SELECTOR, gp.search()["shopping"]).click()
+        selenium_driver.find_element(By.CSS_SELECTOR, gp.search()["shopping"]).click()
 
     def save_to_shop_list(self, selenium_driver):
         gp = GooglePage()
@@ -65,8 +62,9 @@ class BrowseAndBuy():
                         for element2lib in addToList:
                             if element2lib.is_displayed():
                                 if element2lib.is_enabled():
-                                    selenium_driver.find_element(By.XPATH, gp.save_to_shop_list()["addToList"]).click()
-            print (gp.save_to_shop_list()["note"])
+                                    selenium_driver.find_element(By.XPATH,
+                                                                 gp.save_to_shop_list()["addToList"]).click()
+                                    print (gp.save_to_shop_list()["note"])
         except Exception, err:
             sys.stderr.write('ERROR: %sn' % str(err))
             return 1
