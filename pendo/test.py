@@ -10,6 +10,9 @@ google_page.open()
 google_page.search("hacky sack")
 google_page.shopping_page("hacky sacks")
 google_page.save_to_shop_list(4, "Please buy me")
+
+P.S.
+Using "for loop" for avoid Explicit Waits
 """
 
 import sys
