@@ -19,7 +19,7 @@ class GooglePage():
 
     def save_to_shop_list(self):
         return {
-            "g4": "//div[4]/div/h3/a",              # by xpath:position
+            "g4": "//div[4]/div/div/a/div/img",     # by xpath:position  //div[4]/div/h3/a
             "addToList": "//div[4]/div[2]/div",     # by xpath
             "save": "div.gko-a-lbl",                # by CSS
             "note": "Please buy me"                 # string
