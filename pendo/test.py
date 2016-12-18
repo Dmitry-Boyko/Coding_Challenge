@@ -11,8 +11,6 @@ google_page.search("hacky sack")
 google_page.shopping_page("hacky sacks")
 google_page.save_to_shop_list(4, "Please buy me")
 
-P.S.
-Using "for loop" for avoid Explicit Waits
 """
 
 import sys
@@ -21,6 +19,8 @@ from selenium.webdriver.common.by       import By
 from credentials                        import GooglePage
 from selenium.webdriver.common.keys     import Keys
 
+from selenium.webdriver.support.ui      import WebDriverWait
+from selenium.webdriver.support         import expected_conditions as EC
 
 def driver():
     selenium_driver = webdriver.Chrome()
@@ -52,7 +52,13 @@ class BrowseAndBuy():
 
     def shopping_page(self, selenium_driver):
         gp = GooglePage()
-        selenium_driver.find_element(By.CSS_SELECTOR, gp.search()["shopping"]).click()
+        
+        # selenium_driver.find_element(By.CSS_SELECTOR, gp.search()["shopping"]).click()   # by css > works as expected too
+        
+        element = WebDriverWait(selenium_driver, 4).until(
+            EC.presence_of_element_located((By.LINK_TEXT, gp.search()["shopping_t"]))
+        )
+        element.click()
 
     def save_to_shop_list(self, selenium_driver):
         gp = GooglePage()

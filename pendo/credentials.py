@@ -13,7 +13,8 @@ class GooglePage():
             "h_sack": "hacky sack",                 # string
             "search_fld": "lst-ib",                 # by ID
             "search_icon": "_fZl",                  # by  ID
-            "shopping": "a.q.qs"                     # by CSS
+            "shopping": "a.q.qs",                   # by CSS
+            "shopping_t": "Shopping"                # by Link_Text
             }
 
     def save_to_shop_list(self):
