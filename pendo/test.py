@@ -24,6 +24,7 @@ def driver():
     #selenium_driver = webdriver.Firefox()
     selenium_driver.set_page_load_timeout(30)
     selenium_driver.implicitly_wait(30)
+    selenium_driver.maximize_window()
     return selenium_driver
 
 def main():
