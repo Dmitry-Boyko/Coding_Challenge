@@ -12,7 +12,6 @@ class GooglePage():
         return {
             "h_sack": "hacky sack",                 # string
             "search_fld": "lst-ib",                 # by ID
-            "search_icon": "_fZl",                  # by  ID
             "shopping": "a.q.qs",                   # by CSS
             "shopping_t": "Shopping"                # by Link_Text
             }
@@ -20,7 +19,7 @@ class GooglePage():
     def save_to_shop_list(self):
         return {
             "g4": "//div[4]/div/div/a/div/img",     # by xpath:position  //div[4]/div/h3/a
-            "addToList": "//div[4]/div[2]/div",     # by xpath
+            "addToList": "//div[@id='rso']/div//div[7]/div/div[2]//div[2]/div[3]/div[4]/div[2]/div",     # by xpath  "//div[4]/div[2]/div"
             "save": "div.gko-a-lbl",                # by CSS
             "note": "Please buy me"                 # string
             }
